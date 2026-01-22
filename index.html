@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfroStyle | Premium Nigerian Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fefefe;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: #000;
+            color: #fff;
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span:first-child {
+            color: #e8b923;
+        }
+
+        .logo span:last-child {
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #e8b923;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #e8b923;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .cart-icon:hover {
+            color: #e8b923;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #e8b923;
+            color: #000;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1562777717-dc7d6f2d43f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+
+        .hero h1 span {
+            color: #e8b923;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #e8b923;
+            color: #000;
+            padding: 1rem 2.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #ffd43b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(232, 185, 35, 0.3);
+        }
+
+        /* Products Section */
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #000;
+            position: relative;
+        }
+
+        .section-title span {
+            color: #e8b923;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #e8b923;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e8b923;
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .product-info {
+            padding: 1.8rem;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .product-model {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            font-style: italic;
+        }
+
+        .product-price {
+            color: #000;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        .product-price span {
+            color: #e8b923;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .add-to-cart {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 0.9rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: background 0.3s;
+            font-size: 1rem;
+        }
+
+        .add-to-cart:hover {
+            background: #333;
+        }
+
+        /* Payment Section */
+        .payment-section {
+            background: #000;
+            padding: 3.5rem;
+            border-radius: 10px;
+            margin-bottom: 5rem;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #fff;
+        }
+
+        .payment-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            color: #e8b923;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .payment-form {
+            display: grid;
+            gap: 1.8rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .form-control {
+            padding: 1rem 1.2rem;
+            border: 1px solid #444;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border 0.3s;
+            background: #111;
+            color: #fff;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #e8b923;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        .paystack-button {
+            background: #e8b923;
+            color: #000;
+            border: none;
+            padding: 1.2rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 1px;
+        }
+
+        .paystack-button:hover {
+            background: #ffd43b;
+        }
+
+        .paystack-button i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart-content {
+            background: #fff;
+            width: 90%;
+            max-width: 850px;
+            max-height: 80vh;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-header {
+            background: #000;
+            color: #fff;
+            padding: 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-size: 1.6rem;
+            color: #e8b923;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-cart:hover {
+            color: #e8b923;
+        }
+
+        .cart-items {
+            padding: 1.8rem;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .cart-item {
+            display: flex;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+
+        .cart-item-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-right: 1.5rem;
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .cart-item-price {
+            color: #000;
+            font-weight: 700;
+        }
+
+        .cart-item-remove {
+            color: #e74c3c;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .cart-item-remove:hover {
+            color: #c0392b;
+        }
+
+        .cart-footer {
+            padding: 1.8rem;
+            background: #f8f8f8;
+            border-top: 1px solid #eee;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            color: #000;
+        }
+
+        .cart-total span:last-child {
+            color: #e8b923;
+        }
+
+        .cart-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cart-actions button {
+            padding: 1rem 2.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .continue-shopping {
+            background: #ddd;
+            color: #333;
+            border: none;
+        }
+
+        .continue-shopping:hover {
+            background: #ccc;
+        }
+
+        .checkout {
+            background: #000;
+            color: #fff;
+            border: none;
+        }
+
+        .checkout:hover {
+            background: #333;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-column h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1.8rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+            color: #e8b923;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #fff;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.9rem;
+        }
+
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #e8b923;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.8rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #e8b923;
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                margin-top: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 1.2rem;
+            }
+            
+            .hero {
+                padding: 4rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .payment-section {
+                padding: 2.5rem 1.8rem;
+            }
+            
+            .cart-content {
+                width: 95%;
+            }
+            
+            .cart-actions {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .cart-actions button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .cart-item-image {
+                width: 100%;
+                height: 180px;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .product-image {
+                height: 280px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <span>AFRO</span><span>STYLE</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Collections</a></li>
+                <li><a href="#payment">Checkout</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Black Excellence in <span>Fashion</span></h1>
+            <p>Showcasing premium fashion pieces exclusively worn by Black Nigerian models. Celebrating African beauty, style, and craftsmanship in every design.</p>
+            <a href="#products" class="cta-button">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="container" id="products">
+        <h2 class="section-title">Black Model <span>Collections</span></h2>
+        <div class="products-grid">
+            <!-- Product 1 - Nigerian Male Model in Blazer -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1590845947676-8dbe2c05f6d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Black Nigerian male model in casual blazer">
+                    <div class="product-badge">BEST SELLER</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Premium Casual Blazer</h3>
+                    <p class="product-model">Featured Model: Tunde Adebayo</p>
+                    <div class="product-price">₦<span>35,000</span></div>
+                    <p class="product-description">Elegant casual blazer perfect for both formal and informal occasions. Worn by Nigerian model Tunde Adebayo showcasing contemporary African style.</p>
+                    <button class="add-to-cart" data-id="1" data-name="Premium Casual Blazer" data-price="35000" data-image="https://images.unsplash.com/photo-1590845947676-8dbe2c05f6d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 - Nigerian Female Model in Evening Gown -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Black Nigerian female model in evening gown">
+                    <div class="product-badge">NEW</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Elegant Evening Gown</h3>
+                    <p class="product-model">Featured Model: Adaobi Nwachukwu</p>
+                    <div class="product-price">₦<span>62,500</span></div>
+                    <p class="product-description">Stunning evening gown with intricate detailing. Showcased by Nigerian model Adaobi Nwachukwu, representing modern African elegance and grace.</p>
+                    <button class="add-to-cart" data-id="2" data-name="Elegant Evening Gown" data-price="62500" data-image="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3 - Nigerian Male Model in Traditional Wear -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Black Nigerian male model in traditional-inspired wear">
+                    <div class="product-badge">TRADITIONAL</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Traditional-Inspired Attire</h3>
+                    <p class="product-model">Featured Model: Chinedu Okoro</p>
+                    <div class="product-price">₦<span>45,000</span></div>
+                    <p class="product-description">Modern interpretation of traditional Nigerian fashion. Worn by model Chinedu Okoro, this outfit blends cultural heritage with contemporary design.</p>
+                    <button class="add-to-cart" data-id="3" data-name="Traditional-Inspired Attire" data-price="45000" data-image="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 4 - Nigerian Female Model in Business Suit -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Black Nigerian female model in business suit">
+                    <div class="product-badge">PROFESSIONAL</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Professional Business Suit</h3>
+                    <p class="product-model">Featured Model: Chioma Eze</p>
+                    <div class="product-price">₦<span>55,000</span></div>
+                    <p class="product-description">Sharp and sophisticated business suit for the modern professional. Showcased by Nigerian model Chioma Eze in a corporate setting.</p>
+                    <button class="add-to-cart" data-id="4" data-name="Professional Business Suit" data-price="55000" data-image="https://images.unsplash.com/photo-1589156280159-27698a70f29e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="container" id="payment">
+        <div class="payment-section">
+            <h2 class="payment-title">Complete Your Purchase</h2>
+            <form id="paymentForm" class="payment-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-control" required placeholder="Enter your first name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" class="form-control" required placeholder="Enter your last name">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required placeholder="example@domain.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <input type="text" id="address" class="form-control" required placeholder="Enter your full address">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" class="form-control" required placeholder="Lagos, Abuja, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" required placeholder="+234 801 234 5678">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="amount">Total Amount (₦)</label>
+                    <input type="text" id="amount" class="form-control" value="0" readonly>
+                </div>
+                
+                <button type="button" id="paystackButton" class="paystack-button">
+                    <i class="fas fa-lock"></i> Pay Securely with Paystack
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Shopping Bag</h3>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically added here -->
+                <p id="emptyCartMessage" style="text-align: center; padding: 3rem; color: #777; font-style: italic;">Your cart is empty. Add some items to get started!</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total Amount:</span>
+                    <span id="cartTotal">₦0</span>
+                </div>
+                <div class="cart-actions">
+                    <button class="continue-shopping" id="continueShopping">Continue Shopping</button>
+                    <button class="checkout" id="checkoutButton">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>AFROSTYLE</h4>
+                    <p>Celebrating Black Nigerian models in premium fashion. Showcasing African beauty, style, and excellence through contemporary fashion design and representation.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Collections</a></li>
+                        <li><a href="#payment">Secure Checkout</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Victoria Island, Lagos</li>
+                        <li><i class="fas fa-phone"></i> +234 901 234 5678</li>
+                        <li><i class="fas fa-envelope"></i> support@afrostyle.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 AFROSTYLE. Celebrating Black Nigerian Models. | All images feature Black models from Unsplash (Free to use license)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Paystack Integration Script -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    
+    <script>
+        // Cart functionality
+        let cart = [];
+        const cartIcon = document.getElementById('cartIcon');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const emptyCartMessage = document.getElementById('emptyCartMessage');
+        const continueShopping = document.getElementById('continueShopping');
+        const checkoutButton = document.getElementById('checkoutButton');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const amountInput = document.getElementById('amount');
+        const paystackButton = document.getElementById('paystackButton');
+        
+        // Initialize cart from localStorage
+        if (localStorage.getItem('cart')) {
+            cart = JSON.parse(localStorage.getItem('cart'));
+            updateCart();
+        }
+        
+        // Add to cart functionality
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-name');
+                const price = parseInt(button.getAttribute('data-price'));
+                const image = button.getAttribute('data-image');
+                
+                // Check if item already exists in cart
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        image,
+                        quantity: 1
+                    });
+                }
+                
+                updateCart();
+                showCartModal();
+                
+                // Button feedback animation
+                const originalText = button.textContent;
+                button.textContent = '✓ Added to Cart';
+                button.style.backgroundColor = '#2a7d52';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.backgroundColor = '';
+                }, 1500);
+            });
+        });
+        
+        // Update cart UI
+        function updateCart() {
+            // Update cart count
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            document.querySelector('.cart-count').textContent = cartCount;
+            
+            // Update cart items in modal
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p id="emptyCartMessage" style="text-align: center; padding: 3rem; color: #777; font-style: italic;">Your cart is empty. Add some items to get started!</p>';
+                cartTotal.textContent = '₦0';
+                amountInput.value = '0';
+                return;
+            }
+            
+            // Clear cart items
+            cartItems.innerHTML = '';
+            
+            let total = 0;
+            
+            // Add each cart item
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                
+                const cartItemElement = document.createElement('div');
+                cartItemElement.className = 'cart-item';
+                cartItemElement.innerHTML = `
+                    <div class="cart-item-image">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">₦${item.price.toLocaleString()} × ${item.quantity}</div>
+                    </div>
+                    <button class="cart-item-remove" data-id="${item.id}" title="Remove item">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+                
+                cartItems.appendChild(cartItemElement);
+            });
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.cart-item-remove').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    removeFromCart(id);
+                });
+            });
+            
+            // Update total
+            cartTotal.textContent = `₦${total.toLocaleString()}`;
+            amountInput.value = total;
+            
+            // Save cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+        
+        // Remove item from cart
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCart();
+        }
+        
+        // Show cart modal
+        function showCartModal() {
+            cartModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Hide cart modal
+        function hideCartModal() {
+            cartModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Event listeners for cart
+        cartIcon.addEventListener('click', showCartModal);
+        closeCart.addEventListener('click', hideCartModal);
+        continueShopping.addEventListener('click', hideCartModal);
+        
+        // Close modal when clicking outside
+        cartModal.addEventListener('click', (e) => {
+            if (e.target === cartModal) {
+                hideCartModal();
+            }
+        });
+        
+        // Checkout button
+        checkoutButton.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Your cart is empty. Add items to proceed.');
+                return;
+            }
+            
+            hideCartModal();
+            document.getElementById('payment').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Paystack payment integration
+        paystackButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const amount = amountInput.value;
+            
+            // Form validation
+            if (!firstName || !lastName || !email) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            if (amount === '0' || amount === '') {
+                alert('Your cart is empty. Add items to proceed.');
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // Paystack integration with provided public key
+            const handler = PaystackPop.setup({
+                key: 'pk_live_669ad09183f1ded9229c99297d5d67f539e3c828',
+                email: email,
+                amount: parseInt(amount) * 100, // Convert to kobo
+                currency: 'NGN',
+                ref: 'AFRO-' + Date.now(),
+                firstname: firstName,
+                lastname: lastName,
+                metadata: {
+                    custom_fields: [
+                        {
+                            display_name: "Customer Name",
+                            variable_name: "customer_name",
+                            value: firstName + ' ' + lastName
+                        },
+                        {
+                            display_name: "Items Purchased",
+                            variable_name: "items_count",
+                            value: cart.length
+                        }
+                    ]
+                },
+                callback: function(response) {
+                    alert('Payment successful! Reference: ' + response.reference);
+                    // Clear cart after successful payment
+                    cart = [];
+                    updateCart();
+                    // Reset form
+                    document.getElementById('paymentForm').reset();
+                    // Show thank you message
+                    showThankYouMessage(firstName);
+                },
+                onClose: function() {
+                    alert('Payment window closed. You can complete your payment later.');
+                }
+            });
+            
+            handler.openIframe();
+        });
+        
+        // Email validation function
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        // Show thank you message
+        function showThankYouMessage(name) {
+            const message = document.createElement('div');
+            message.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #000;
+                color: #e8b923;
+                padding: 2.5rem;
+                border-radius: 10px;
+                text-align: center;
+                z-index: 3000;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                max-width: 500px;
+                width: 90%;
+            `;
+            message.innerHTML = `
+                <h3 style="margin-bottom: 1rem; font-size: 1.8rem;">Thank You, ${name}!</h3>
+                <p style="margin-bottom: 1.5rem; color: #fff;">Your order has been placed successfully. You will receive a confirmation email shortly.</p>
+                <button id="closeThankYou" style="background: #e8b923; color: #000; border: none; padding: 0.8rem 2rem; border-radius: 4px; font-weight: 600; cursor: pointer;">OK</button>
+            `;
+            
+            document.body.appendChild(message);
+            
+            document.getElementById('closeThankYou').addEventListener('click', () => {
+                document.body.removeChild(message);
+            });
+            
+            // Auto close after 8 seconds
+            setTimeout(() => {
+                if (document.body.contains(message)) {
+                    document.body.removeChild(message);
+                }
+            }, 8000);
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Initialize amount field with cart total
+        updateCart();
+    </script>
+</body>
+</html>
